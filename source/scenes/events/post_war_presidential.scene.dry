@@ -198,12 +198,16 @@ if (Q.braun_campaign) {
     if (Q.kpd_support_braun) {
         Q.braun_votes += Q.kpd_normalized;
         Q.braun_votes += Q.sapd_normalized;
-        Q.braun_votes += (Q.rfb_force/2500);
+        if (Q.rfb_force) {
+            Q.braun_votes += (Q.rfb_force/2500);
+        }
     }
     Q.braun_votes += (Q.pro_republic/1000);
     Q.braun_votes += ((100-Q.nationalism)/2500);
     Q.braun_votes += (Q.democratization/100);
-    Q.braun_votes += (Q.rb_force/3500);
+    if (Q.rb_force) {
+        Q.braun_votes += (Q.rb_force/3500);
+    }
     Q.braun_votes += ((Math.floor(Math.random() * 11))/350);
 }
 if (Q.schumacher_campaign) {
@@ -217,18 +221,26 @@ if (Q.schumacher_campaign) {
     }
     if (Q.kpd_support_schumacher) {
         Q.schumacher_votes += Q.kpd_normalized;
-        Q.schumacher_votes += (Q.rfb_force/2500);
+        if (Q.rfb_force) {
+            Q.schumacher_votes += (Q.rfb_force/2500);
+        }
     }
     Q.schumacher_votes += (Q.pacifism/200);
     Q.schumacher_votes += (Q.pro_republic/1000);
     Q.schumacher_votes += ((100-Q.nationalism)/2250);
-    Q.schumacher_votes += (Q.rb_force/3000);
+    if (Q.rb_force) {
+        Q.schumacher_votes += (Q.rb_force/3000);
+    }
     Q.schumacher_votes += ((Math.floor(Math.random() * 11))/350);
 }
 if (Q.thalmann_campaign) {
     Q.thalmann_votes += Q.kpd_normalized;
-    Q.thalmann_votes += (Q.rfb_force/1000);
-    Q.thalmann_votes += (Q.kpd_influence/100);
+    if (Q.rfb_force) {
+        Q.thalmann_votes += (Q.rfb_force/1000);
+    }
+    if (Q.kpd_influence) {
+        Q.thalmann_votes += (Q.kpd_influence/100);
+    }
     if (Q.spd_support_thalmann) {
         Q.thalmann_votes += Q.spd_normalized;
         Q.thalmann_votes += Q.sapd_normalized;
@@ -245,8 +257,12 @@ if (Q.thalmann_campaign) {
 if (Q.munzenburg_campaign) {
     Q.munzenburg_votes += Q.kpd_normalized;
     Q.munzenburg_votes += Q.sapd_normalized;
-    Q.munzenburg_votes += (Q.rfb_force/1500);
-    Q.munzenburg_votes += (Q.kpd_influence/150);
+    if (Q.rfb_force) {
+        Q.munzenburg_votes += (Q.rfb_force/1500);
+    }
+    if (Q.kpd_influence) {
+        Q.munzenburg_votes += (Q.kpd_influence/150);
+    }
     if (Q.spd_support_munzenburg) {
         Q.munzenburg_votes += Q.spd_normalized;
         if (Q.gessler_campaign) {
